@@ -22,10 +22,15 @@ namespace FiguresLibrary
             sideC = c;
         }
 
-        public override double GetSquare()
+        /// <summary>
+        /// Нахождение площади треугольника по трём сторонам
+        /// </summary>
+        /// <returns>Возвращает площадь с округлением до 6 чисел после запятой</returns>
+        public override double GetArea()
         {
             double semiPerimeter = (sideA + sideB + sideC) / 2;
-            return Math.Sqrt(semiPerimeter * (semiPerimeter - sideA) * (semiPerimeter - sideB) * (semiPerimeter - sideC));
+            double area = Math.Sqrt(semiPerimeter * (semiPerimeter - sideA) * (semiPerimeter - sideB) * (semiPerimeter - sideC));
+            return Math.Round(area, 6);
         }
 
         /// <summary>

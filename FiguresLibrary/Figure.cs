@@ -7,6 +7,6 @@
 
         }
 
-        public abstract double GetSquare();
+        public abstract double GetArea();
     }
 }

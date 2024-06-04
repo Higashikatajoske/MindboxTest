@@ -18,15 +18,16 @@ namespace FiguresLibrary
         /// <summary>
         /// Находит площадь круга по радиусу
         /// </summary>
-        public override double GetSquare()
+        /// <returns>Возращает площадь с округлением 6 чисел после запятой</returns>
+        public override double GetArea()
         {
-            return radius * 2 * Math.PI; 
+            return Math.Round(radius * 2 * Math.PI, 6); 
         }
 
         /// <summary>
         /// Валидирует значение радиуса
         /// </summary>
-        /// <exception cref="CircleCreateException"></exception>
+        /// <exception cref="CircleCreateException">Исключение создания круга</exception>
         private void Validate()
         {
             if (radius < 0)
