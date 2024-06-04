@@ -4,9 +4,9 @@ namespace FiguresLibrary
 {
     public class Triangle : Figure
     {
-        private readonly double sideA;
-        private readonly double sideB;
-        private readonly double sideC;
+        private readonly int sideA;
+        private readonly int sideB;
+        private readonly int sideC;
 
         /// <summary>
         /// Создаёт треугольник по трём сторонам
@@ -14,7 +14,7 @@ namespace FiguresLibrary
         /// <param name="a">Сторона А</param>
         /// <param name="b">Сторона B</param>
         /// <param name="c">Сторона С</param>
-        public Triangle(double a, double b, double c)
+        public Triangle(int a, int b, int c)
         {
             ValidateSides(a, b, c);
             sideA = a;
@@ -25,12 +25,12 @@ namespace FiguresLibrary
         /// <summary>
         /// Нахождение площади треугольника по трём сторонам
         /// </summary>
-        /// <returns>Возвращает площадь с округлением до 6 чисел после запятой</returns>
+        /// <returns>Возвращает площадь с округлением до 4 чисел после запятой</returns>
         public override double GetArea()
         {
             double semiPerimeter = (sideA + sideB + sideC) / 2;
             double area = Math.Sqrt(semiPerimeter * (semiPerimeter - sideA) * (semiPerimeter - sideB) * (semiPerimeter - sideC));
-            return Math.Round(area, 6);
+            return Math.Round(area, 4);
         }
 
         /// <summary>
@@ -45,9 +45,9 @@ namespace FiguresLibrary
             } 
         }
 
-        private void ValidateSides(double a, double b, double c)
+        private void ValidateSides(int a, int b, int c)
         {
-            if (a < 0 || b < 0 || c < 0) 
+            if (a <= 0 || b <= 0 || c <= 0) 
                 throw new TriangeCreateException("One side or several have negative value. Triangle can't be created.");
 
             if (a + b < c || b + c < a || a + c < b)

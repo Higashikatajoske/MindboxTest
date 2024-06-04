@@ -7,30 +7,31 @@ namespace FiguresLibrary
         /// <summary>
         /// Радиус круга
         /// </summary>
-        private readonly double radius;
+        private readonly int radius;
 
-        public Circle(double r) 
+        public Circle(int r) 
         {
-            Validate();
+            Validate(r);
             radius = r;
         }
 
         /// <summary>
         /// Находит площадь круга по радиусу
         /// </summary>
-        /// <returns>Возращает площадь с округлением 6 чисел после запятой</returns>
+        /// <returns>Возращает площадь с округлением 4 чисел после запятой</returns>
         public override double GetArea()
         {
-            return Math.Round(radius * 2 * Math.PI, 6); 
+            double area = radius * radius * Math.PI;
+            return Math.Round(area, 4); 
         }
 
         /// <summary>
         /// Валидирует значение радиуса
         /// </summary>
         /// <exception cref="CircleCreateException">Исключение создания круга</exception>
-        private void Validate()
+        private void Validate(int r)
         {
-            if (radius < 0)
+            if (r <= 0)
             {
                 throw new CircleCreateException("Radius less or equal zero. Circle can't be created.");
             }
