@@ -1,4 +1,5 @@
-﻿
+﻿using FiguresLibrary.Exceptions;
+
 namespace FiguresLibrary
 {
     public class Circle : Figure
@@ -6,20 +7,32 @@ namespace FiguresLibrary
         /// <summary>
         /// Радиус круга
         /// </summary>
-        public double Raduis {  get; set; }
+        private readonly double radius;
 
-        public Circle(double raduis) 
+        public Circle(double r) 
         {
-            Raduis = raduis;
+            Validate();
+            radius = r;
         }
 
         /// <summary>
         /// Находит площадь круга по радиусу
         /// </summary>
-        /// <returns></returns>
         public override double GetSquare()
         {
-            return Raduis * 2 * Math.PI; 
+            return radius * 2 * Math.PI; 
+        }
+
+        /// <summary>
+        /// Валидирует значение радиуса
+        /// </summary>
+        /// <exception cref="CircleCreateException"></exception>
+        private void Validate()
+        {
+            if (radius < 0)
+            {
+                throw new CircleCreateException("Radius less or equal zero. Circle can't be created.");
+            }
         }
     }
 }

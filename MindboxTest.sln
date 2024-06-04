@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AreaProject", "SquareProjec
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiguresLibrary", "FiguresLibrary\FiguresLibrary.csproj", "{43B91FB9-8622-410D-A246-6CD6F3163F33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FigureTest", "FigureTest\FigureTest.csproj", "{6F9D1AB4-8050-470E-9D43-6FDAA544FE1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{43B91FB9-8622-410D-A246-6CD6F3163F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43B91FB9-8622-410D-A246-6CD6F3163F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43B91FB9-8622-410D-A246-6CD6F3163F33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F9D1AB4-8050-470E-9D43-6FDAA544FE1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F9D1AB4-8050-470E-9D43-6FDAA544FE1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F9D1AB4-8050-470E-9D43-6FDAA544FE1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F9D1AB4-8050-470E-9D43-6FDAA544FE1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
