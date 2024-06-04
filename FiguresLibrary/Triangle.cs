@@ -28,8 +28,9 @@ namespace FiguresLibrary
         /// <returns>Возвращает площадь с округлением до 4 чисел после запятой</returns>
         public override double GetArea()
         {
-            double semiPerimeter = (sideA + sideB + sideC) / 2;
-            double area = Math.Sqrt(semiPerimeter * (semiPerimeter - sideA) * (semiPerimeter - sideB) * (semiPerimeter - sideC));
+            double semiPerimeter = (double)(sideA + sideB + sideC) / 2;
+            double x = semiPerimeter * (semiPerimeter - sideA) * (semiPerimeter - sideB) * (semiPerimeter - sideC);
+            double area = Math.Sqrt(x);
             return Math.Round(area, 4);
         }
 
@@ -50,7 +51,7 @@ namespace FiguresLibrary
             if (a <= 0 || b <= 0 || c <= 0) 
                 throw new TriangeCreateException("One side or several have negative value. Triangle can't be created.");
 
-            if (a + b < c || b + c < a || a + c < b)
+            if (a + b <= c || b + c <= a || a + c <= b)
                 throw new TriangeCreateException("Sum of two sides less than last one. Triangle can't be created");
         }
     }
