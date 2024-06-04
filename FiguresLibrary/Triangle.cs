@@ -16,7 +16,8 @@ namespace FiguresLibrary
 
         public override double GetSquare()
         {
-            throw new NotImplementedException();
+            double semiPerimeter = (sideA + sideB + sideC) / 2;
+            return Math.Sqrt(semiPerimeter * (semiPerimeter - sideA) * (semiPerimeter - sideB) * (semiPerimeter - sideC));
         }
     }
 }
